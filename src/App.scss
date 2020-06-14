@@ -1,0 +1,195 @@
+@import './variable.scss';
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.App.Session {
+  .clock h1 {
+    color: $color-session;
+  }
+
+  .clock-container {
+    background: $gradient-session;
+  }
+} 
+
+.App.Break {
+  .clock h1 {
+    color: $color-break;
+  }
+
+  .clock-container {
+    background: $gradient-break;
+  }
+} 
+
+.clock-container {
+  height: calc(100vh - 161px);
+  padding: 1em;
+  position: relative;
+  transition: background-color .2s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.clock h1 {
+  background-color: $color-white;
+  color: $color-black;
+  font-family: 'Boogaloo', cursive;
+  font-size: 1.6rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 60px 30px 15px 30px;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
+
+.running-clock {
+  color: $color-white;
+  margin: 0 auto;
+  max-width: 380px;
+  padding: 15px 0 0 0;
+  text-align: center;
+  position: relative;
+  width: 80%;
+  z-index: 2;
+
+  @media only screen and (min-width: $small) {
+    padding: 15px 0;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+
+    @media only screen and ($small) {
+      padding: 15px 0 0 0;
+    }
+  }
+
+  #time-left {
+    font-size: 4rem;
+
+    @media only screen and (min-width: $small) {
+      font-size: 6rem;
+    }
+  }
+}
+
+.set-timer {
+  display: flex;
+  margin: 0 auto;
+  max-width: 380px;
+  width: 80%;
+}
+
+.time-input {
+  color: $color-white;
+  text-align: center;
+  width: 50%;
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 15px 0 0 0;
+  }
+  
+  span {
+    display: block;
+    font-size: 3rem;
+
+    @media only screen and (min-width: $small) {
+      font-size: 3.6rem;
+    }
+  }
+}
+
+.buttons {
+  button {
+    background-color: transparent;
+    background-size: 60% 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    border: 2px solid $color-white;
+    border-radius: 50%;
+    color: transparent;
+    display: inline-block;
+    height: 48px;
+    margin: 5px;
+    overflow: hidden;
+    width: 48px;
+  }
+
+  button.play {
+    background-image: url('./images/icon-play.svg');
+  }
+
+  button.pause {
+    background-image: url('./images/icon-pause.svg');
+  }
+
+  button.reset {
+    background-image: url('./images/icon-reset.svg');
+  }
+
+  button.increase {
+    background-image: url('./images/icon-increase.svg');
+  }
+
+  button.decrease {
+    background-image: url('./images/icon-decrease.svg');
+  }
+}
+
+.video_player_container{
+  margin: 1em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .video_player_button{
+    color: $color-white;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 15px 0 0 0;
+  }
+
+  .video_buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  button {
+    background-color: transparent;
+    background-size: 60% 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border: 2px solid $color-white;
+    border-radius: 50%;
+    color: transparent;
+    display: inline-block;
+    height: 48px;
+    margin: 5px;
+    overflow: hidden;
+    width: 48px;
+    .reset{
+      background-image: url('./images/icon-reset.svg');
+    }
+  }
+
+}

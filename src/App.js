@@ -13,7 +13,7 @@ class App extends Component {
   
       this.state = {
         cycle: 'Session',
-        sessionTime: 5,
+        sessionTime: 25,
         breakTime: 5,
         clockCount: 0,
         started: false,
@@ -39,7 +39,7 @@ class App extends Component {
       const sessionTime = this.state.sessionTime;
   
       this.setState({
-        clockCount: sessionTime * 2
+        clockCount: sessionTime * 60
       });
     }
   
@@ -114,7 +114,7 @@ class App extends Component {
   
       if(!started) {
         this.setState({
-          clockCount: sessionTime * 2,
+          clockCount: sessionTime * 60,
           cycle: 'Session',
           started: true
         });
@@ -146,7 +146,7 @@ class App extends Component {
           if(clockCount === 0) {
             this.setState({
               cycle: cycle === 'Session' ? 'Break' : 'Session',
-              clockCount: cycle === 'Session' ? (breakTime * 2) : (sessionTime * 2),
+              clockCount: cycle === 'Session' ? (breakTime * 60) : (sessionTime * 60),
               playVideo: cycle === 'Session' ? false : true
             });
 
